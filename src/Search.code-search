@@ -1,0 +1,22 @@
+# Query: ../fonts/
+# ContextLines: 1
+
+8 results - 2 files
+
+src/App.css:
+  11802    font-weight: 400;
+  11803:   src: url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2") format("woff2"), url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff") format("woff"); }
+  11804  
+
+  11807    font-weight: 600;
+  11808:   src: url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff2") format("woff2"), url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff") format("woff"); }
+  11809  
+
+src/assets/css/theme.css:
+  11802    font-weight: 400;
+  11803:   src: url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff2") format("woff2"), url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Regular.woff") format("woff"); }
+  11804  
+
+  11807    font-weight: 600;
+  11808:   src: url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff2") format("woff2"), url("./fonts/HK%20Grotesk%20Pro/HKGroteskPro-Medium.woff") format("woff"); }
+  11809  
