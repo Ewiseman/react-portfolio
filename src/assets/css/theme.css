@@ -12940,6 +12940,8 @@ code[class*='language-'], pre[class*='language-'] {
   width: 4.375rem;
   height: 4.375rem;
   opacity: 1 !important;
+  margin-right: -20px;
+  margin-top: 10px;
 }
 
 @media (max-width: 991.98px) {
@@ -13016,7 +13018,7 @@ code[class*='language-'], pre[class*='language-'] {
 /*-----------------------------------------------
 |   Fancy Navbar Collapse
 -----------------------------------------------*/
-.fancynavbar-collapse {
+.fancynavbar-not-collapse {
   height: 100vh;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -13028,6 +13030,31 @@ code[class*='language-'], pre[class*='language-'] {
   position: absolute;
   text-align: left;
   width: calc(50vw - 2.1875rem);
+  right: calc(50vw + 2.1875rem);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  top: 0;
+  padding: 0;
+  z-index: -1;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background-color: #000;
+  opacity: 0.92;
+}
+
+.fancynavbar-collapse {
+  height: 100vh;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  position: absolute;
+  text-align: left;
+  width: calc(50% - 2.1875rem);
   right: calc(50% + 2.1875rem);
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
@@ -13047,6 +13074,31 @@ code[class*='language-'], pre[class*='language-'] {
     top: 3rem;
     right: 0;
     height: calc(100vh - 3rem);
+  }
+
+  .fancynavbar-not-collapse {
+    height: 100vh;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: auto;
+    position: absolute;
+    text-align: left;
+    width: 100vw;
+    right: 100vw;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    top: 0;
+    padding: 0;
+    z-index: -1;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background-color: #000;
+    opacity: 0.92;
   }
 }
 
