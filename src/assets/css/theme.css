@@ -13029,18 +13029,21 @@ code[class*='language-'], pre[class*='language-'] {
   overflow: auto;
   position: absolute;
   text-align: left;
-  width: calc(50vw - 2.1875rem);
-  right: calc(50vw + 2.1875rem);
+  width: calc(50vw - 1.1875rem);
+  right: calc(50vw + 1.1875rem);
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
   top: 0;
-  padding: 0;
+  padding-left: 2vw;
+  padding-right: 10vw;
   z-index: -1;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   background-color: #000;
   opacity: 0.92;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
 }
 
 .fancynavbar-collapse {
@@ -13066,6 +13069,9 @@ code[class*='language-'], pre[class*='language-'] {
   backdrop-filter: blur(20px);
   background-color: #000;
   opacity: 0.92;
+  transition: .5s;
+  transition-delay: .8s;
+  transition-timing-function: ease-in;
 }
 
 @media (max-width: 991.98px) {
@@ -13093,7 +13099,7 @@ code[class*='language-'], pre[class*='language-'] {
     -ms-transform: translateX(100%);
     transform: translateX(100%);
     top: 0;
-    padding: 0;
+    padding-right: 10vw;
     z-index: -1;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
