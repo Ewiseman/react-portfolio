@@ -3,7 +3,7 @@ import SideNav from "./components/SideNav.js";
 
 function App() {
   return (
-    <div>
+    <div className="taco">
       <SideNav />
       <Hero />
     </div>
