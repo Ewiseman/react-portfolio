@@ -1,12 +1,14 @@
-import Hero from "./components/Hero.js";
+import React from "react";
+
 import SideNav from "./components/SideNav.js";
 
 function App() {
   return (
-    <div className="taco">
-      <SideNav />
-      <Hero />
-    </div>
+    <>
+      <React.Fragment>
+        <SideNav />
+      </React.Fragment>
+    </>
   );
 }
 

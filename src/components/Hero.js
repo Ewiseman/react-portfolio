@@ -41,15 +41,13 @@ const Hero = () => {
     <section className="py-0">
       <div className="container-fluid">
         <div className="row h-full border-bottom border-300">
-          <div className="col-lg-6 px-0 order-lg-2">
-            <div className="owl-carousel owl-theme owl-dots-inner owl-theme-white h-100">
-              <div className="min-vh-lg-100 py-9">
-                <Area data={data} />
-              </div>
+          <div className="col-lg-8 px-0 order-lg-2">
+            <div className="min-vh-lg-100 py-9">
+              <Area data={data} />
             </div>
           </div>
 
-          <div className="col-lg-6 bg-white py-7 py-md-8">
+          <div className="col-lg-4 bg-white py-7 py-md-8">
             <div className="row align-items-center justify-content-center h-100">
               <div className="col-lg-10 text-black text-center text-lg-left">
                 <Animated
@@ -78,8 +76,8 @@ const Hero = () => {
                       className="text-900 fs-1 mt-0 mt-md-0"
                       data-zanim-xs='{"delay":0.3}'
                     >
-                      Data driven tools and experiences that enhance
-                      productivity and usability.
+                      I craft data driven tools and experiences that drive
+                      change and enhance productivity.
                     </p>
                   </div>
                   <div className="">

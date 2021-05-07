@@ -28,10 +28,10 @@ import React from "react";
 import * as d3 from "d3";
 
 function Area({ data }) {
-  const ref = useD3(
+  const chart = useD3(
     (svg) => {
-      const height = 500;
-      const width = 900;
+      const height = 600;
+      const width = 1200;
       const margin = { top: 20, right: 30, bottom: 30, left: 40 };
 
       const x = d3
@@ -76,13 +76,27 @@ function Area({ data }) {
       svg.select(".x-axis").call(xAxis);
       svg.select(".y-axis").call(y1Axis);
 
+      const area = d3
+        .area()
+        .curve(d3.curveLinear)
+        .x((d) => x(d.year))
+        .y0(y1(0))
+        .y1((d) => y1(d.scales));
+
+      svg
+        .select(".plot-area")
+        .append("path")
+        .datum(data)
+        .attr("fill", "steelblue")
+        .attr("d", area);
+
       svg
         .select(".plot-area")
         .attr("fill", "steelblue")
-        .selectAll(".bar")
+        .selectAll(".path")
         .data(data)
         .join("rect")
-        .attr("class", "bar")
+        .attr("class", "path")
         .attr("x", (d) => x(d.year))
         .attr("width", x.bandwidth())
         .attr("y", (d) => y1(d.sales))
@@ -93,9 +107,9 @@ function Area({ data }) {
 
   return (
     <svg
-      ref={ref}
+      ref={chart}
       style={{
-        height: 500,
+        height: 900,
         width: "100%",
         marginRight: "0px",
         marginLeft: "0px",

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import { Animated } from "react-animated-css";
+import Blog from "./Blog.js";
+import Hero from "./Hero.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const SideNav = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
@@ -10,41 +13,46 @@ const SideNav = () => {
   const NavLinkAnimation = (props) => {
     if (!isNavCollapsed) {
       return (
-        <Animated
-          animationIn="fadeInRight"
-          animationInDuration={1400}
-          animationInDelay={100}
-          isVisible={true}
-        >
-          <li className="fancynav-item fancy-dropdown">
-            <a className="fancynav-link" href="/#">
-              <span className="fancynav-link-content">Home </span>
-            </a>
-            <div className="fancy-dropdown-menu">
-              <div className="row pb-4 pt-3">
-                <div className="col-auto">
-                  <a className="fancy-dropdown-item" href="home-default.html">
-                    Default
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li className="fancynav-item fancy-dropdown">
-            <a className="fancynav-link" href="/#">
-              <span className="fancynav-link-content">Portfolio </span>
-            </a>
-            <div className="fancy-dropdown-menu">
-              <div className="row pb-4 pt-3">
-                <div className="col-auto">
-                  <a className="fancy-dropdown-item" href="home-default.html">
-                    Default
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-        </Animated>
+        <Router>
+          <>
+            <Animated
+              animationIn="fadeInRight"
+              animationInDuration={1400}
+              animationInDelay={100}
+              isVisible={true}
+            >
+              <li className="fancynav-item fancy-dropdown">
+                <Link to={`/`}>
+                  <span className="fancynav-link" href="/#">
+                    <span
+                      onClick={handleNavCollapse}
+                      className="fancynav-link-content"
+                    >
+                      Home
+                    </span>
+                  </span>
+                </Link>
+              </li>
+              <li className="fancynav-item fancy-dropdown">
+                <a className="fancynav-link" href="/#">
+                  <span className="fancynav-link-content">Work </span>
+                </a>
+              </li>
+              <li className="fancynav-item fancy-dropdown">
+                <Link to={`/blog`}>
+                  <span className="fancynav-link">
+                    <span className="fancynav-link-content">Blog </span>
+                  </span>
+                </Link>
+              </li>
+              <li className="fancynav-item fancy-dropdown">
+                <a className="fancynav-link" href="/#">
+                  <span className="fancynav-link-content">Contact </span>
+                </a>
+              </li>
+            </Animated>
+          </>
+        </Router>
       );
     } else {
       return (
@@ -55,32 +63,24 @@ const SideNav = () => {
           isVisible={true}
         >
           <li className="fancynav-item fancy-dropdown">
-            <a className="fancynav-link" href="/#">
+            <span className="fancynav-link">
               <span className="fancynav-link-content">Home </span>
-            </a>
-            <div className="fancy-dropdown-menu">
-              <div className="row pb-4 pt-3">
-                <div className="col-auto">
-                  <a className="fancy-dropdown-item" href="home-default.html">
-                    Default
-                  </a>
-                </div>
-              </div>
-            </div>
+            </span>
           </li>
           <li className="fancynav-item fancy-dropdown">
-            <a className="fancynav-link" href="/#">
-              <span className="fancynav-link-content">Portfolio </span>
-            </a>
-            <div className="fancy-dropdown-menu">
-              <div className="row pb-4 pt-3">
-                <div className="col-auto">
-                  <a className="fancy-dropdown-item" href="home-default.html">
-                    Default
-                  </a>
-                </div>
-              </div>
-            </div>
+            <span className="fancynav-link">
+              <span className="fancynav-link-content">Work </span>
+            </span>
+          </li>
+          <li className="fancynav-item fancy-dropdown">
+            <span className="fancynav-link">
+              <span className="fancynav-link-content">Blog </span>
+            </span>
+          </li>
+          <li className="fancynav-item fancy-dropdown">
+            <span className="fancynav-link">
+              <span className="fancynav-link-content">Contact </span>
+            </span>
           </li>
         </Animated>
       );
@@ -88,41 +88,43 @@ const SideNav = () => {
   };
 
   return (
-    <nav className="fancynavbar">
-      <div className="fancynavbar-togglerbar">
-        <h4>
-          <a className="fancynavbar-brand" href="/#">
-            EW
-          </a>
-        </h4>
-        <button
-          className="custom-toggler navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarsExample09"
-          aria-controls="navbarsExample09"
-          aria-expanded={!isNavCollapsed ? true : false}
-          aria-label="Toggle navigation"
-          onClick={handleNavCollapse}
-        >
-          <div className="fancynavbar-toggler">
-            <Hamburger color={"#fff"} />
-          </div>
-        </button>
+    <div>
+      <nav className="fancynavbar">
+        <div className="fancynavbar-togglerbar">
+          <h4>
+            <a className="fancynavbar-brand" href="/#">
+              EW
+            </a>
+          </h4>
+          <button
+            className="custom-toggler navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExample09"
+            aria-controls="navbarsExample09"
+            aria-expanded={!isNavCollapsed ? true : false}
+            aria-label="Toggle navigation"
+            onClick={handleNavCollapse}
+          >
+            <div className="fancynavbar-toggler">
+              <Hamburger color={"#fff"} />
+            </div>
+          </button>
 
-        <div
-          className={`fancynavbar${
-            !isNavCollapsed ? "-not-collapse" : "-collapse"
-          }`}
-          id="navbarsExample09"
-        >
-          <ul className="fancynavbar-nav">
-            <NavLinkAnimation />
-          </ul>
+          <div
+            className={`fancynavbar${
+              !isNavCollapsed ? "-not-collapse" : "-collapse"
+            }`}
+            id="navbarsExample09"
+          >
+            <ul className="fancynavbar-nav">
+              <NavLinkAnimation />
+            </ul>
+          </div>
+          <div className="fancynavbar-addon"></div>
         </div>
-        <div className="fancynavbar-addon"></div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
