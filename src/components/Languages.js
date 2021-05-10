@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Languages = () => {
   return (
-    <section className="h-full border-bottom border-300" id="default">
+    <section className="h-full border-bottom border-300">
       <div className="container ">
         <div className="row justify-content-center">
           <div className="col-12 mb-5 mb-md-7 text-center">

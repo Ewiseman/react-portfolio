@@ -13385,7 +13385,7 @@ pre[class*="language-"] {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: black;
+  background-color: #000;
 }
 
 @media (max-width: 991.98px) {
@@ -13394,7 +13394,7 @@ pre[class*="language-"] {
     -ms-flex-align: center;
     align-items: center;
     height: 3rem;
-    background-color: black;
+    background-color: #000;
   }
 }
 
@@ -13897,7 +13897,7 @@ pre[class*="language-"] {
     position: absolute;
     right: 4.375rem;
     top: 0.281rem;
-    background-color: black;
+    background-color: #000;
   }
   .fancynavbar-top .fancynavbar-addon-item {
     margin-top: 0;

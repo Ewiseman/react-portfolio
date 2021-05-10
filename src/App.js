@@ -1,14 +1,12 @@
 import React from "react";
-
 import SideNav from "./components/SideNav.js";
+import Hero from "./components/Hero.js";
 
 function App() {
   return (
-    <>
-      <React.Fragment>
-        <SideNav />
-      </React.Fragment>
-    </>
+    <div>
+      <SideNav />
+    </div>
   );
 }
 

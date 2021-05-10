@@ -2,6 +2,7 @@ import React from "react";
 // import Background from ".././assets/img/photo-3.jpg";
 import { Animated } from "react-animated-css";
 import Area from "./Area.js";
+import Languages from "./Languages.js";
 
 const data = [
   { year: 1980, efficiency: 24.3, sales: 8949000 },
@@ -38,63 +39,66 @@ const data = [
 
 const Hero = () => {
   return (
-    <section className="py-0">
-      <div className="container-fluid">
-        <div className="row h-full border-bottom border-300">
-          <div className="col-lg-8 px-0 order-lg-2">
-            <div className="min-vh-lg-100 py-9">
-              <Area data={data} />
+    <React.Fragment>
+      <section className="py-0">
+        <div className="container-fluid">
+          <div className="row h-full border-bottom border-300">
+            <div className="col-lg-8 px-0 order-lg-2">
+              <div className="min-vh-lg-100 py-9">
+                {/* <Area data={data} /> */}
+              </div>
             </div>
-          </div>
 
-          <div className="col-lg-4 bg-white py-7 py-md-8">
-            <div className="row align-items-center justify-content-center h-100">
-              <div className="col-lg-10 text-black text-center text-lg-left">
-                <Animated
-                  animationIn="fadeInLeft"
-                  animationInDuration={1600}
-                  isVisible={true}
-                >
-                  <div className="overflow-hidden">
-                    <h4
-                      className="text-uppercase font-weight-normal ls text-white bg-dark p-1 rounded d-inline-block"
-                      data-zanim-xs='{"delay":0.1}'
-                    >
-                      Eric Wiseman
-                    </h4>
-                  </div>
-                  <div className="">
-                    <h1
-                      className="display-3 fs-5 fs-sm-5"
-                      data-zanim-xs='{"delay":0.2}'
-                    >
-                      <span className="font-weight-light">UI Engineer</span>
-                    </h1>
-                  </div>
-                  <div className="">
-                    <p
-                      className="text-900 fs-1 mt-0 mt-md-0"
-                      data-zanim-xs='{"delay":0.3}'
-                    >
-                      I craft data driven tools and experiences that drive
-                      change and enhance productivity.
-                    </p>
-                  </div>
-                  <div className="">
-                    <div
-                      className="d-lg-flex align-items-center font-weight-bold ls mt-0 mt-md-4 text-uppercase"
-                      data-zanim-xs='{"delay":0.4}'
-                    >
-                      <h6 className="mb-lg-0">Follow:</h6>
+            <div className="col-lg-4 bg-white py-7 py-md-8">
+              <div className="row align-items-center justify-content-center h-100">
+                <div className="col-lg-10 text-black text-center text-lg-left">
+                  <Animated
+                    animationIn="fadeInLeft"
+                    animationInDuration={1600}
+                    isVisible={true}
+                  >
+                    <div className="overflow-hidden">
+                      <h4
+                        className="text-uppercase font-weight-normal ls text-white bg-dark p-1 rounded d-inline-block"
+                        data-zanim-xs='{"delay":0.1}'
+                      >
+                        Eric Wiseman
+                      </h4>
                     </div>
-                  </div>
-                </Animated>
+                    <div className="">
+                      <h1
+                        className="display-3 fs-5 fs-sm-5"
+                        data-zanim-xs='{"delay":0.2}'
+                      >
+                        <span className="font-weight-light">UI Engineer</span>
+                      </h1>
+                    </div>
+                    <div className="">
+                      <p
+                        className="text-900 fs-1 mt-0 mt-md-0"
+                        data-zanim-xs='{"delay":0.3}'
+                      >
+                        I craft data driven tools and experiences that drive
+                        change and enhance productivity.
+                      </p>
+                    </div>
+                    <div className="">
+                      <div
+                        className="d-lg-flex align-items-center font-weight-bold ls mt-0 mt-md-4 text-uppercase"
+                        data-zanim-xs='{"delay":0.4}'
+                      >
+                        <h6 className="mb-lg-0">Follow:</h6>
+                      </div>
+                    </div>
+                  </Animated>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Languages />
+    </React.Fragment>
   );
 };
 
