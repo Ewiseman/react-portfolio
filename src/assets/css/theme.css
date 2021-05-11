@@ -13567,7 +13567,6 @@ pre[class*="language-"] {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-  transition-delay: 0.8s;
   transition-timing-function: ease-in;
 }
 
