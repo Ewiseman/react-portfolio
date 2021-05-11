@@ -70,39 +70,33 @@ export default function SideNav() {
                     isVisible={true}
                   >
                     <Link to="/">
-                      <li className="fancynav-item fancy-dropdown">
+                      <li
+                        className="fancynav-item fancy-dropdown"
+                        onClick={handleNavCollapse}
+                      >
                         <span className="fancynav-link">
-                          <span
-                            className="fancynav-link-content"
-                            onClick={handleNavCollapse}
-                          >
-                            Home
-                          </span>
+                          <span className="fancynav-link-content">Home</span>
                         </span>
                       </li>
                     </Link>
 
                     <Link to="/blog">
-                      <li className="fancynav-item fancy-dropdown">
+                      <li
+                        className="fancynav-item fancy-dropdown"
+                        onClick={handleNavCollapse}
+                      >
                         <span className="fancynav-link">
-                          <span
-                            className="fancynav-link-content"
-                            onClick={handleNavCollapse}
-                          >
-                            Blog
-                          </span>
+                          <span className="fancynav-link-content">Blog</span>
                         </span>
                       </li>
                     </Link>
                     <Link to="/contact">
-                      <li className="fancynav-item fancy-dropdown">
+                      <li
+                        className="fancynav-item fancy-dropdown"
+                        onClick={handleNavCollapse}
+                      >
                         <span className="fancynav-link">
-                          <span
-                            className="fancynav-link-content"
-                            onClick={handleNavCollapse}
-                          >
-                            Contact
-                          </span>
+                          <span className="fancynav-link-content">Contact</span>
                         </span>
                       </li>
                     </Link>
