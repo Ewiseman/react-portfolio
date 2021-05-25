@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Hero from "./Hero.js";
+import Blog from "./Blog.js";
 import { Animated } from "react-animated-css";
 import Hamburger from "hamburger-react";
 
@@ -14,7 +15,7 @@ const routes = [
   {
     path: "/blog",
     sidebar: () => <div></div>,
-    main: () => <h2>blog</h2>,
+    main: () => <Blog />,
   },
   {
     path: "/shoelaces",

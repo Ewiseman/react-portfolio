@@ -1,7 +1,8 @@
 import React from "react";
 // import Background from ".././assets/img/photo-3.jpg";
 import { Animated } from "react-animated-css";
-import Area from "./Area.js";
+import Line from "./Line.js";
+import StackedArea from "./StackedArea.js";
 import Languages from "./Languages.js";
 
 const data = [
@@ -37,19 +38,46 @@ const data = [
   { year: 2017, efficiency: 39.4, sales: 6081000 },
 ];
 
+const dataTwo = [
+  { year: 1980, efficiency: 24.3, sales: 83949 },
+  { year: 1985, efficiency: 27.6, sales: 10979 },
+  { year: 1990, efficiency: 28, sales: 9303 },
+  { year: 1991, efficiency: 28.4, sales: 80185 },
+  { year: 1992, efficiency: 27.9, sales: 80213 },
+  { year: 1993, efficiency: 28.4, sales: 80518 },
+  { year: 1994, efficiency: 28.3, sales: 80991 },
+  { year: 1995, efficiency: 28.6, sales: 80620 },
+  { year: 1996, efficiency: 28.5, sales: 81479 },
+  { year: 1997, efficiency: 28.7, sales: 80217 },
+  { year: 1998, efficiency: 28.8, sales: 80085 },
+  { year: 1999, efficiency: 28.3, sales: 80638 },
+  { year: 2000, efficiency: 28.5, sales: 80778 },
+  { year: 2001, efficiency: 28.8, sales: 80352 },
+  { year: 2002, efficiency: 29, sales: 80042 },
+  { year: 2003, efficiency: 29.5, sales: 7556 },
+  { year: 2004, efficiency: 29.5, sales: 7483 },
+  { year: 2005, efficiency: 30.3, sales: 7660 },
+  { year: 2006, efficiency: 30.1, sales: 7762 },
+  { year: 2007, efficiency: 31.2, sales: 7562 },
+  { year: 2008, efficiency: 31.5, sales: 6769 },
+  { year: 2009, efficiency: 32.9, sales: 5402 },
+  { year: 2010, efficiency: 33.9, sales: 5636 },
+  { year: 2011, efficiency: 33.1, sales: 6093 },
+  { year: 2012, efficiency: 35.3, sales: 7245 },
+  { year: 2013, efficiency: 36.4, sales: 7586 },
+  { year: 2014, efficiency: 36.5, sales: 7708 },
+  { year: 2015, efficiency: 37.2, sales: 7517 },
+  { year: 2016, efficiency: 37.7, sales: 6873 },
+  { year: 2017, efficiency: 39.4, sales: 6081 },
+];
+
 const Hero = () => {
   return (
     <React.Fragment>
       <section className="py-0">
         <div className="container-fluid">
           <div className="row h-full border-bottom border-300">
-            <div className="col-lg-8 px-0 order-lg-2">
-              <div className="min-vh-lg-100 py-9">
-                {/* <Area data={data} /> */}
-              </div>
-            </div>
-
-            <div className="col-lg-4 bg-white py-7 py-md-8">
+            <div className="col-lg-8 bg-white py-7 py-md-8">
               <div className="row align-items-center justify-content-center h-100">
                 <div className="col-lg-10 text-black text-center text-lg-left">
                   <Animated
@@ -78,8 +106,7 @@ const Hero = () => {
                         className="text-900 fs-1 mt-0 mt-md-0"
                         data-zanim-xs='{"delay":0.3}'
                       >
-                        I craft data driven tools and experiences that drive
-                        change and enhance productivity.
+                        I design & develop data driven products and experiences.
                       </p>
                     </div>
                     <div className="">
@@ -92,6 +119,19 @@ const Hero = () => {
                     </div>
                   </Animated>
                 </div>
+              </div>
+            </div>
+            <div className="col-lg-4 px-0 order-lg-2">
+              <div className="min-vh-lg-100 py-9">
+                <Animated
+                  animationIn="fadeInLeft"
+                  animationInDuration={1600}
+                  isVisible={true}
+                >
+                  <Line data={data} />
+
+                  <StackedArea data={data} />
+                </Animated>
               </div>
             </div>
           </div>

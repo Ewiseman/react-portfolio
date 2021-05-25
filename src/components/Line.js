@@ -1,34 +1,9 @@
-// import React, { useEffect } from "react";
-// import * as d3 from "d3";
-
-// const Area = () => {
-//   useEffect(() => {
-//     const format = d3.timeFormat("%Y-%m-%d");
-//     const svg = d3.select("#area");
-
-//     svg
-//       .append("circle")
-//       .attr("cx", 300)
-//       .attr("cy", 100)
-//       .attr("r", 40)
-//       .style("fill", "green");
-//   }, []);
-
-//   return (
-//     <div className="App">
-//       <svg id="area" height={200} width={450}></svg>
-//     </div>
-//   );
-// };
-
-// export default Area;
-
 import { useD3 } from "./useD3";
 import React from "react";
 import * as d3 from "d3";
 
-function Area({ data }) {
-  const chart = useD3(
+function Line({ data }) {
+  const lineChart = useD3(
     (svg) => {
       const height = 500;
       const width = 500;
@@ -40,10 +15,19 @@ function Area({ data }) {
         .rangeRound([margin.left, width - margin.right])
         .padding(0.1);
 
-      const y1 = d3
+      const y = d3
         .scaleLinear()
         .domain([0, d3.max(data, (d) => d.sales)])
         .rangeRound([height - margin.bottom, margin.top]);
+
+      const valueline = d3
+        .line()
+        .x(function (d) {
+          return x(d.year);
+        })
+        .y(function (d) {
+          return y(d.sales);
+        });
 
       const xAxis = (g) =>
         g.attr("transform", `translate(0,${height - margin.bottom})`).call(
@@ -57,11 +41,11 @@ function Area({ data }) {
             .tickSizeOuter(0)
         );
 
-      const y1Axis = (g) =>
+      const yAxis = (g) =>
         g
           .attr("transform", `translate(${margin.left},0)`)
           .style("color", "steelblue")
-          .call(d3.axisLeft(y1).ticks(null, "s"))
+          .call(d3.axisLeft(y).ticks(null, "s"))
           .call((g) => g.select(".domain").remove())
           .call((g) =>
             g
@@ -70,44 +54,24 @@ function Area({ data }) {
               .attr("y", 10)
               .attr("fill", "currentColor")
               .attr("text-anchor", "start")
-              .text(data.y1)
+              .text(data.y)
           );
 
       svg.select(".x-axis").call(xAxis);
-      svg.select(".y-axis").call(y1Axis);
-
-      const area = d3
-        .area()
-        .curve(d3.curveLinear)
-        .x((d) => x(d.year))
-        .y0(y1(0))
-        .y1((d) => y1(d.scales));
-
+      svg.select(".y-axis").call(yAxis);
       svg
-        .select(".plot-area")
+        .select(".plot-Line")
         .append("path")
-        .datum(data)
-        .attr("fill", "steelblue")
-        .attr("d", area);
-
-      svg
-        .select(".plot-area")
-        .attr("fill", "steelblue")
-        .selectAll(".path")
-        .data(data)
-        .join("rect")
-        .attr("class", "path")
-        .attr("x", (d) => x(d.year))
-        .attr("width", x.bandwidth())
-        .attr("y", (d) => y1(d.sales))
-        .attr("height", (d) => y1(0) - y1(d.sales));
+        .attr("class", "line")
+        .data([data])
+        .attr("d", valueline);
     },
     [data.length]
   );
 
   return (
     <svg
-      ref={chart}
+      ref={lineChart}
       style={{
         height: 900,
         width: "100%",
@@ -115,11 +79,11 @@ function Area({ data }) {
         marginLeft: "0px",
       }}
     >
-      <g className="plot-area" />
+      <g className="plot-Line" />
       <g className="x-axis" />
       <g className="y-axis" />
     </svg>
   );
 }
 
-export default Area;
+export default Line;

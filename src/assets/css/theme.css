@@ -13541,6 +13541,23 @@ pre[class*="language-"] {
   transition-timing-function: ease-in;
 }
 
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.area {
+  fill: #4ca3bd;
+}
+
 .fancynavbar-collapse {
   height: 100vh;
   -webkit-box-align: center;
